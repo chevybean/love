@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* style.css 内容 */
+        .calculate {
+            margin: 20px;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        .input-str {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        // calculator.js 内容
+        function calculate() {
+            const inputStr = document.getElementById('inputStr').value;
+            try {
+                const result = eval(inputStr);
+                document.getElementById('expression').innerText = inputStr;
+                document.getElementById('result').innerText = result;
+            } catch (e) {
+                document.getElementById('result').innerText = 'Error';
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="calculate" class="calculate">
+        <label for="inputStr" class="label">Input: </label>
+        <p></p>
+        <input id="inputStr" class="input-str" type="text" title="请输入要计算的公式（仅包含数字，+，-，*，/， . ,(,) ）">
+        <p></p>
+        <button onclick="calculate()" class="btn" id="click_btn">Calculate</button>
+        <p class="label">Result:</p>
+        <div id="expression" class="result"></div>
+        <div id="result" class="result"></div>
+    </div>
+    <!-- <div id="polygon">
+        <div>
+            <label for="length" style="width: 2em;">Length:</label>
+            <input type="text" id="length">
+            
+        </div>
+        <div>
+            <label for="width" style="width: 2em;">Width:</label>
+            <input type="text" id="width">
+        </div>
+        <button onclick="getResult()">Calculate</button>
+        <p>Perimeter:</p>
+        <div id="perimeter"></div>
+        <p>Area:</p>
+        <div id="area"></div>
+
+    </div> -->
+</body>
+
+</html>
